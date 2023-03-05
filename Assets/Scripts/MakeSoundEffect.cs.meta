@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 81a6b41afcfa4aa49b5e0e8b25316cce
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hornEffect: {fileID: 4695778236525799366, guid: b39b20478e0b95e49a1ce055e92d8b29, type: 3}
+  - crashEffect: {fileID: 4695778236525799366, guid: 06bd594754a68e646b71d085d828eaea, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
