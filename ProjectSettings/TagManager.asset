@@ -8,6 +8,7 @@ TagManager:
   - Vehicle
   - Coin
   - Wrench
+  - OilTank
   layers:
   - Default
   - TransparentFX

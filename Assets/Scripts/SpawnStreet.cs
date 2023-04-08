@@ -52,7 +52,7 @@ public class SpawnStreet : MonoBehaviour
         float step = 12f;
         float y = 0.4f;
         float epsilon = 0.1f;
-        float chance = 0.7f;
+        float chance = 0.6f;
         
 
         for (float i = startPos + step; i < endPos; i += step) {

@@ -8,6 +8,7 @@ public class MakeSoundEffect : MonoBehaviour
     public AudioSource crashEffect;
     public AudioSource coinEffect;
     public AudioSource wrenchEffect;
+    public AudioSource tankFillEffect;
 
     void Update()
     {
@@ -30,9 +31,12 @@ public class MakeSoundEffect : MonoBehaviour
         {
             coinEffect.Play();
 
-        } else if (other.gameObject.CompareTag("Wrench")) 
+        } else if (other.gameObject.CompareTag("Wrench"))
         {
             wrenchEffect.Play();
+        } else if (other.gameObject.CompareTag("OilTank"))
+        {
+            tankFillEffect.Play();
         }
     }
 
