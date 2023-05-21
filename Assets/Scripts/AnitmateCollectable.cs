@@ -8,11 +8,11 @@ public class AnitmateCollectable : MonoBehaviour
     public float rotationY = 0f;
 
     private float orientation = 0f;
-    private float rotationSpeed = 200f;
+    private float rotationSpeed = 5f;
     private float angle = 0f;
     private float amplitude = 0.2f;
     private float offset = 0f;
-    private float angleSpeed = 200f;
+    private float angleSpeed = 5f;
     private float maxAngle = 360f;
     private float height = 0f;
 
@@ -21,14 +21,14 @@ public class AnitmateCollectable : MonoBehaviour
         offset = Random.value;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         this.transform.rotation = Quaternion.Euler(new Vector3(rotationX, orientation, rotationY));
-        orientation = orientation + rotationSpeed * Time.deltaTime;
+        orientation = orientation + rotationSpeed;
         if (angle > maxAngle) {
             angle -= maxAngle;
         }
         this.transform.position = new Vector3(this.transform.position.x, height + amplitude * Mathf.Sin(angle * Mathf.Deg2Rad + offset), this.transform.position.z);
-        angle += angleSpeed * Time.deltaTime;
+        angle += angleSpeed;
     }
 }

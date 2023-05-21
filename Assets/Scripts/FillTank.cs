@@ -15,7 +15,7 @@ public class FillTank : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            controller.handleFillTank(10f);
+            controller.handleFillTank(5f);
             Destroy(this.gameObject);
         }
     }

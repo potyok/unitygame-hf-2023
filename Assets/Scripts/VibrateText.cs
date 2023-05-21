@@ -9,10 +9,10 @@ public class VibrateText : MonoBehaviour
     private float stage = 0f;
     private int maxStage = 360;
 
-    void Update()
+    void FixedUpdate()
     {
         vibratedText.color = new Color(1f, 1f, 1f, Mathf.Abs(Mathf.Cos(stage / maxStage * 2f * Mathf.PI)));
-        stage += Time.deltaTime * 100f;
+        stage += 2f;
         if (stage > maxStage) stage = 0f;
     }
 }

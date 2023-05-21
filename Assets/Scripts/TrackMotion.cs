@@ -13,10 +13,9 @@ public class TrackMotion : MonoBehaviour
         controller = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
-    
-    void Update()
+    void FixedUpdate() 
     {
         float speed = controller.getSpeed(isVehicle, (transform.position.z < splitterPoint));
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        transform.position += Vector3.left * speed;
     }
 }

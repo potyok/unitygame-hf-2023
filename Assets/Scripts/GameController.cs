@@ -22,8 +22,8 @@ public class GameController : MonoBehaviour
     private float totalDistance = 0f;
     private int heart;
 
-    private float streetSpeed = 10f;
-    private float diffSpeed = 3f;
+    private float streetSpeed = 0.2f;
+    private float diffSpeed = 0.055f;
     private int maxHeart = 100;
     private int coinValue = 200;
     private int repairValue = 5;
@@ -146,14 +146,20 @@ public class GameController : MonoBehaviour
                 Time.timeScale = 0;
                 pasuePanel.SetActive(true);
             }
-            totalDistance += streetSpeed * Time.deltaTime * 0.01f;
-            distanceText.text = $"Distance: {(int)totalDistance} km";
-            streetSpeed += Time.deltaTime * 0.03f;
-            SteeringSpeed += Time.deltaTime * 0.003f;
-            tankLevel -= Time.deltaTime * 2f;
             handleHealthBar();
             handleTankLevel();
         }
         
+    }
+
+    void FixedUpdate()
+    {
+        if (isGone) {
+            totalDistance += streetSpeed * 0.02f;
+            distanceText.text = $"Distance: {(int)totalDistance} km";
+            streetSpeed += 0.000005f * Mathf.Sqrt(totalDistance);
+            SteeringSpeed += 0.000005f * Mathf.Sqrt(totalDistance);
+            tankLevel -= streetSpeed * 0.1f;
+        }
     }
 }
